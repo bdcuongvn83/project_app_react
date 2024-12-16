@@ -25,6 +25,7 @@ React: Core framework.
 React-router-dom: For routing, navigation, and state management between pages.
 
 Reference video:
+
 https://github.com/user-attachments/assets/b23dfab2-9207-455f-9c87-5d331f0138a9
 
 ## 1. Iniital page: HomePage
