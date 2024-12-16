@@ -65,43 +65,44 @@ https://github.com/user-attachments/assets/b23dfab2-9207-455f-9c87-5d331f0138a9
 ## 2. Page ProductAppContext : including list Product page, and navigate to Register Product page
 -![image](https://github.com/user-attachments/assets/c5bd0c54-d23a-413f-81c2-2db29d9ff0aa)
 
--Navigate from List page to New Data Page
--Initial list data has 3 records.
--UseContext for passing products list,ReducerHandler from main page (ProductAppContext) to List ProductListContext page.
+![image](https://github.com/user-attachments/assets/89090bf6-94ed-4d56-96a8-3156f08b3222)
+
+- Navigate from List page to New Data Page
+- Initial list data has 3 records.
+- UseContext for passing products list,ReducerHandler from main page (ProductAppContext) to List ProductListContext page.
 by using ProductsContext.Provider, ProductsDispatchContex.
--Receive data from state when comeback from Register Product Page
+- Receive data from state when comeback from Register Product Page
+- UseEffect to synchoronize productsFromState to show latest data in ProductList page.
+![image](https://github.com/user-attachments/assets/9660d676-3a08-46a8-94db-845c3a78cbec)
+
 
 **Note** : Cannot use dispatch and useContext when navigating to the screen using usenavigate
 When need to pass data to another page when navigate, we use useNavigate with state.
 ex: navigate('/ProductAdd', {
                 state: { products } // Pass dispatch for state updates
               })
--reducer is replaced with direct registration.
+- reducer is replaced with direct registration.
 
 ![image](https://github.com/user-attachments/assets/784dc774-d554-4542-a4ea-5421ae48d46c)
 
-## Page ProductListContext : containing data product list.
--Load when initially displaying the ProductAppContext screen.
--Receive product list data from useContext (pass data from Parent(ProductAppContext) to List page
--Receive reducer handler to process Update/Delete records from Parent (ProductAppContext) 
+## 3. Page ProductListContext : containing data product list.
+- Load when initially displaying the ProductAppContext screen.
+- Receive product list data from useContext (pass data from Parent(ProductAppContext) to List page
+- Receive reducer handler to process Update/Delete records from Parent (ProductAppContext) 
 ![image](https://github.com/user-attachments/assets/8a3e4479-275c-4d15-b44b-6e428a7335d2)
 
-## 3. Create Page ProductAddContext  register product:
--Navigate from Parent page (ProductAppContext page)
--using form data contain all of input items on screen.
--using formErrors contain all errors items on screen.
--When onchange: validate items to show error according logic check such as check required.
--when click register button, check page valid, then useNavigate back to List page, and pass State with new data listpro
--use useEffect to synchronize for replace products that got from stage(case of comeback from Register Page)
-
-![image](https://github.com/user-attachments/assets/89090bf6-94ed-4d56-96a8-3156f08b3222)
+## 4. Create Page ProductAddContext  register product:
+- Navigate from Parent page (ProductAppContext page)
+- using form data contain all of input items on screen.
+- using formErrors contain all errors items on screen.
+- When onchange: validate items to show error according logic check such as check required.
+- when click register button, check page valid, then useNavigate back to List page, and pass State with new data listpro
+- use useEffect to synchronize for replace products that got from stage(case of comeback from Register Page)
 
 ![image](https://github.com/user-attachments/assets/ad16f45b-78d1-4475-8829-5e9d3843a256)
 ![image](https://github.com/user-attachments/assets/0e0258f8-b4ef-45a5-9d19-05a8fdea74bd)
 
-
-
-## Page ProductsContext: export const ProductsContext, ProductsDispatchContext to share common logic
+## 5. Page ProductsContext: export const ProductsContext, ProductsDispatchContext to share common logic
 ![image](https://github.com/user-attachments/assets/ae65314b-58ed-41fa-97f4-553936578cce)
 
 
